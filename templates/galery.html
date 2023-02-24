@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+   <div class="galery">
+      {% for i in range(1, 10) %}
+         {% set http  = 'http://127.0.0.1:5000' %}
+         <div class="image" style="background-image: url({{ http }}{{ url_for('static', filename='img/' + i|string + '.png') }})"></div>
+      {% endfor %}
+   </div>
+{% endblock %}

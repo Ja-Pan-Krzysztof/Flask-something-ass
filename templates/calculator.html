@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="calculator">
+   <header><h2>Calculator J & KCAL</h2></header>
+
+   <form>
+      <label for="a">A</label>
+      <input type="number" placeholder="Enter a any number" name="a" id="a"> <br> <br> <br>
+   </form>
+       <input type="button" value="To Kcal" onclick="to_kcal();"> <br>
+      <input type="button" value="To J" onclick="to_j();">
+
+   <br> <br>
+   
+   <header><h3 id="result">Wynik tutaj bydzie : </h3></header>
+
+   <script>
+      function to_kcal() {
+         let a = document.getElementById('a').value;
+         let result = document.getElementById('result');
+
+         let output = a * 4186.8;
+
+         result.innerHTML = `Wynik tutaj bydzie : ${output} J`;
+         
+      };
+
+      function to_j() {
+         let a = document.getElementById('a').value;
+         let result = document.getElementById('result');
+
+         let output = a * 0.00023885;
+
+         result.innerHTML = `Wynik tutaj bydzie : ${output} Kcal`;
+
+      };
+   </script>
+</div>
+{% endblock %}
